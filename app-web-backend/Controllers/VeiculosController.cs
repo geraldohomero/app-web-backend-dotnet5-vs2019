@@ -21,7 +21,7 @@ namespace app_web_backend.Controllers
         // GET: Veiculos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Veiculos.ToListAsync());
+            return View(await _context.Veiculos.ToListAsync()); //Lista de veículos
         }
 
         // GET: Veiculos/Details/5
