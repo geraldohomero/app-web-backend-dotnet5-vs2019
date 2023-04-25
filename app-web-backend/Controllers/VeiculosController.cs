@@ -42,6 +42,25 @@ namespace app_web_backend.Controllers
             return View(veiculo);
         }
 
+        // GET: Veiculos/Relatorio/5
+        public async Task<IActionResult> Relatorio(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var veiculo = await _context.Veiculos
+                .Include(t => t.Consumos) //Pega os dados de consumo para dentro de Veículos
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (veiculo == null)
+            {
+                return NotFound();
+            }
+
+            return View(veiculo);
+        }
+
         // GET: Veiculos/Create
         public IActionResult Create()
         {
