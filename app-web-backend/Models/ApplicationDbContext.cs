@@ -15,6 +15,8 @@ namespace app_web_backend.Models
 
         public DbSet<Consumo> Consumos { get; set; }
 
+        public DbSet<Usuario> Usuarios { get; set; }
+
 
     }
 }
