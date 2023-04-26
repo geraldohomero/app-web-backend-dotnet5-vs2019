@@ -1,6 +1,8 @@
 using app_web_backend.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,23 @@ namespace app_web_backend
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.AccessDeniedPath = "/Account/AccessDenied/";
+                    options.LoginPath = "/Usuarios/Login/";
+                }
+            );
+
             services.AddControllersWithViews();
         }
 
@@ -45,7 +64,11 @@ namespace app_web_backend
 
             app.UseRouting();
 
+            app.UseCookiePolicy();
+
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
