@@ -25,6 +25,6 @@ namespace app_web_backend.Models
     public enum Perfil
     {
         Admin,
-        Usar
+        User
     }
 }

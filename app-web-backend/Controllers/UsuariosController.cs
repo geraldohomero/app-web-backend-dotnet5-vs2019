@@ -18,6 +18,14 @@ namespace app_web_backend.Controllers
             _context = context;
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+
+
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
