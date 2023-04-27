@@ -38,7 +38,7 @@ namespace app_web_backend
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.AccessDeniedPath = "/Account/AccessDenied/";
+                    options.AccessDeniedPath = "/Usuarios/AccessDenied/";
                     options.LoginPath = "/Usuarios/Login/";
                 }
             );
@@ -66,9 +66,9 @@ namespace app_web_backend
 
             app.UseCookiePolicy();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

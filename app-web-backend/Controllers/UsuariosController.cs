@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using app_web_backend.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace app_web_backend.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsuariosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,12 +22,14 @@ namespace app_web_backend.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([Bind("Id,Senha")]Usuario usuario)
         {
             var user = await _context.Usuarios
@@ -71,14 +75,18 @@ namespace app_web_backend.Controllers
 
         }
 
+        [AllowAnonymous]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login", "Usuarios");
+        }
 
+        [AllowAnonymous]
         public IActionResult AccessDenied()
         {
             return View();
         }
-
-
-
 
 
         // GET: Usuarios
