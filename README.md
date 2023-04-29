@@ -33,7 +33,7 @@ namespace app_web_backend.Models
 ## `appsetings.json`
 ```json
   "ConnectionStrings": {
-    "DefaultConnection": "Server=GERALDO\\SQLEXPRESS;Database=app_web_backend;Trusted_Connection=True;"
+    "DefaultConnection": "Server=server\\name;Database=app_web_backend;Trusted_Connection=True;"
 ```
 ## DbContext
 
