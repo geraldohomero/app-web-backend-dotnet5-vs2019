@@ -30,7 +30,7 @@ namespace app_web_backend.Models
     }
 }
 ```
-## `appsetings.json`
+## appsetings.json
 ```json
   "ConnectionStrings": {
     "DefaultConnection": "Server=server\\name;Database=app_web_backend;Trusted_Connection=True;"
