@@ -85,6 +85,4 @@ namespace app_web_backend.Models
                 }
             );
 
-            services.AddControllersWithViews();
-        }
  ```
