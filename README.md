@@ -65,3 +65,26 @@ namespace app_web_backend.Models
 
 - `Migration` - `add-migration`
 - `update-database`
+
+## Cookie
+```csharp
+         services.Configure<CookiePolicyOptions>(options =>
+            {
+
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+```
+## Authentication
+```csharp
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.AccessDeniedPath = "/Usuarios/AccessDenied/";
+                    options.LoginPath = "/Usuarios/Login/";
+                }
+            );
+
+            services.AddControllersWithViews();
+        }
+ ```
