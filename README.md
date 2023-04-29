@@ -50,3 +50,8 @@ namespace app_web_backend.Models
     }
 }
 ```
+
+## Database
+
+- `Migration` - `add-migration`
+- `update-database`
