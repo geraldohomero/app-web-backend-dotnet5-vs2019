@@ -33,6 +33,13 @@ namespace app_web_backend.Models
 
 ## DbContext
 ```csharp
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
+```
+```csharp
 namespace app_web_backend.Models
 {
     public class ApplicationDbContext : DbContext
