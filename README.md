@@ -32,6 +32,8 @@ namespace app_web_backend.Models
 ```
 
 ## DbContext
+
+- `Startup.cs` || `Program.cs`
 ```csharp
 public void ConfigureServices(IServiceCollection services)
         {
@@ -39,6 +41,7 @@ public void ConfigureServices(IServiceCollection services)
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 ```
+- `ApplicationDbContext.cs`
 ```csharp
 namespace app_web_backend.Models
 {
