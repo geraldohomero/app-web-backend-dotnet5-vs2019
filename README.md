@@ -6,9 +6,8 @@ App criado na aula de Desenvolvimento Back-end (PUC-Minas) - Eixo 2 - .NET 5
 - SQL Server
 - BCrypt
 
-![image](https://user-images.githubusercontent.com/70844369/235548695-4c8a2c9f-ab8b-4159-bcda-66cdda300120.png)
-![image](https://user-images.githubusercontent.com/70844369/235548563-d3eee00c-ee65-4bb0-9fcb-933f9b4cbdec.png)
-
+![image](https://user-images.githubusercontent.com/70844369/235548860-a630f1bd-b843-4650-90b9-ec52ba0fabbf.png)
+![image](https://user-images.githubusercontent.com/70844369/235548819-65190ac7-7c0f-47e1-8b5b-c7694fce014a.png)
 ## Data Annotations
 ```csharp
 using System.ComponentModel.DataAnnotations;
