@@ -7,7 +7,7 @@ App criado na aula de Desenvolvimento Back-end (PUC-Minas) - Eixo 2 - .NET 5
 - BCrypt
 - Bootstrap
 
-![image](https://user-images.githubusercontent.com/70844369/235549164-21d3c42e-e727-4767-8fec-ac4d7c3798b5.png)
+![image](https://user-images.githubusercontent.com/70844369/235549164-21d3c42e-e727-4767-8fec-ac4d7c3798b5.png#vitrinedev)
 ![image](https://user-images.githubusercontent.com/70844369/235549213-a3d24890-2cd7-4671-afb5-63a7e8e23b1b.png)
 
 ## Data Annotations
